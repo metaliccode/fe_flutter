@@ -1,0 +1,17 @@
+Extensi flutter :
+- Flutter 
+- Dart
+- Awesome Flutter snippet
+- Flutter Widget Snippet
+- Vscode-icon
+- Prettier
+- breaket
+
+Setting Save ENV:
+- formatter 
+- set save format
+
+Cara membuat project :
+- flutter doctor
+- flurtter devices
+- flutter create nama_project
