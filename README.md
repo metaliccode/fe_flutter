@@ -1,6 +1,6 @@
 # training_flutter
 
-Basic Flutter for Training 
+Basic Flutter Slider, HTTP, shared Preferences, dan route dan slicing chatty page
 
 ## Getting Started
 
