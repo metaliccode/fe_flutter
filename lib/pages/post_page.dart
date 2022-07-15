@@ -19,7 +19,7 @@ class _PostPageState extends State<PostPage> {
     // jika response berhasil
     if (response.error == null) {
       // masukan data ke list _postList = []
-      debugPrint('Response: ${response.data}');
+      // debugPrint('Response: ${response.data}');
       setState(() {
         isLoading = false;
         _postList = response.data as List<dynamic>;

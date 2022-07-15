@@ -15,8 +15,10 @@ class _LoginState extends State<Login> {
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   TextEditingController txtEmail = TextEditingController();
   TextEditingController txtPassword = TextEditingController();
+
   bool loading = false;
 
+  // untuk login API
   void _loginUser() async {
     ApiResponse response = await login(txtEmail.text, txtPassword.text);
     if (response.error == null) {
@@ -79,6 +81,7 @@ class _LoginState extends State<Login> {
             const SizedBox(
               height: 10,
             ),
+            // () ? 'true
             loading
                 ? const Center(
                     child: CircularProgressIndicator(),

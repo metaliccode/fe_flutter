@@ -19,7 +19,7 @@ class _SplashPageState extends State<SplashPage> {
       const Duration(
         seconds: 7,
       ),
-      () => Navigator.pushNamed(context, '/home'),
+      () => Navigator.pushNamed(context, '/login'),
     );
     super.initState();
   }

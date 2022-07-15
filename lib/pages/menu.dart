@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:training_flutter/pages/login.dart';
 import 'package:training_flutter/pages/post_page.dart';
 import 'package:training_flutter/pages/profile.dart';
+import 'package:training_flutter/pages/slider_pages.dart';
 import 'package:training_flutter/services/user_service.dart';
 import 'package:training_flutter/slicing/pages/chatty.dart';
 
@@ -20,7 +21,7 @@ class _MenuState extends State<Menu> {
   // list view
   List<Widget> pages = [
     PostPage(),
-    Chatty(),
+    SliderPage(),
     Profile(),
   ];
 
@@ -30,11 +31,11 @@ class _MenuState extends State<Menu> {
       appBar: AppBar(
         title: () {
           if (currentPage == 0) {
-            return Text('Get Global Posts');
+            return const Text('Get Global Posts');
           } else if (currentPage == 1) {
-            return Text('All Products');
+            return const Text('Slider Page');
           } else if (currentPage == 2) {
-            return Text('Profile');
+            return const Text('Profile');
           }
         }(),
         actions: [

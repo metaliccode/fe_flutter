@@ -1,9 +1,7 @@
 import 'dart:io';
 
-import 'package:training_flutter/helpers/constant.dart';
 import 'package:training_flutter/models/api_response.dart';
 import 'package:training_flutter/models/user_model.dart';
-import 'package:training_flutter/pages/login.dart';
 import 'package:training_flutter/services/user_service.dart';
 import 'package:flutter/material.dart';
 

@@ -5,6 +5,7 @@ import 'package:training_flutter/pages/login.dart';
 import 'package:training_flutter/pages/menu.dart';
 import 'package:training_flutter/pages/post_page.dart';
 import 'package:training_flutter/pages/profile.dart';
+import 'package:training_flutter/pages/slider_pages.dart';
 import 'package:training_flutter/pages/splash_page.dart';
 import 'package:training_flutter/slicing/pages/chatty.dart';
 
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/chatty': (context) => const Chatty(),
         '/album': (context) => const AlbumPage(),
         '/postpage': (context) => const PostPage(),
+        '/slider': (context) => const SliderPage(),
       },
     );
   }
