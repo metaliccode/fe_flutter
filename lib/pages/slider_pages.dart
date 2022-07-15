@@ -7,6 +7,7 @@ import 'package:training_flutter/helpers/constant.dart';
 import 'package:training_flutter/models/album_model.dart';
 import 'package:training_flutter/models/api_response.dart';
 import 'package:training_flutter/services/post_service.dart';
+import 'package:training_flutter/services/reqresin_service.dart';
 
 class SliderPage extends StatefulWidget {
   const SliderPage({Key? key}) : super(key: key);
@@ -17,17 +18,17 @@ class SliderPage extends StatefulWidget {
 
 class _SliderPageState extends State<SliderPage> {
   // api Response
-  List<dynamic> _postList = [];
+  List<dynamic> _reqresin = [];
   Future<void> getAllPosts() async {
     // panggil response dari model
-    ApiResponse response = await getPosts();
+    ApiResponse response = await getReqresin();
     // jika response berhasil
     if (response.error == null) {
       // masukan data ke list _postList = []
       debugPrint('Response: ${response.data}');
       setState(() {
         // isLoading = false;
-        _postList = response.data as List<dynamic>;
+        _reqresin = response.data as List<dynamic>;
       });
     } else {
       // jika gagal
@@ -58,18 +59,30 @@ class _SliderPageState extends State<SliderPage> {
     return Container(
       child: Column(children: [
         CarouselSlider(
-          items: _postList.map((index) {
-            return Column(
-              children: [
-                Text(index['title']),
-                Text(
-                  index['body'],
-                  style: TextStyle(
-                    fontSize: 20,
-                    overflow: TextOverflow.ellipsis,
-                  ),
+          // items: _reqresin.map((url) {
+          //   return Container(
+          //     margin: EdgeInsets.all(5.0),
+          //     child: ClipRRect(
+          //       borderRadius: BorderRadius.all(Radius.circular(5.0)),
+          //       child: Image.network(
+          //         url.avatar,
+          //         fit: BoxFit.cover,
+          //         width: 1000.0,
+          //       ),
+          //     ),
+          //   );
+          // }).toList(),
+          items: _reqresin.map((index) {
+            return Container(
+              margin: EdgeInsets.all(5.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                child: Image.network(
+                  '${index.avatar}',
+                  fit: BoxFit.cover,
+                  width: 1000.0,
                 ),
-              ],
+              ),
             );
           }).toList(),
           carouselController: _controller,
@@ -91,13 +104,18 @@ class _SliderPageState extends State<SliderPage> {
               child: Container(
                 width: 12.0,
                 height: 12.0,
-                margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                margin: EdgeInsets.symmetric(
+                  vertical: 8.0,
+                  horizontal: 4.0,
+                ),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: (Theme.of(context).brightness == Brightness.dark
                             ? Colors.white
                             : Colors.black)
-                        .withOpacity(_current == entry.key ? 0.9 : 0.4)),
+                        .withOpacity(
+                      _current == entry.key ? 0.9 : 0.4,
+                    )),
               ),
             );
           }).toList(),

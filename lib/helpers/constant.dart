@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 const globalURL = 'https://jsonplaceholder.typicode.com';
 const albumURL = '$globalURL/albums/1';
 const postURL = '$globalURL/posts';
+const reqresinURL = 'https://reqres.in/api/users?page=2';
 
 // laravel API
 // const baseURL = 'http://127.0.0.1:8000/api';

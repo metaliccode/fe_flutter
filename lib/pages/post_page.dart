@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_flutter/models/api_response.dart';
+import 'package:training_flutter/models/post_model.dart';
 import 'package:training_flutter/services/post_service.dart';
 
 class PostPage extends StatefulWidget {
@@ -44,9 +45,12 @@ class _PostPageState extends State<PostPage> {
           : ListView.builder(
               itemCount: _postList.length,
               itemBuilder: (BuildContext context, int index) {
+                // Post post = _postList[index];
                 return Card(
                   elevation: 5,
                   child: ListTile(
+                    // title: Text('${post.title}'),
+                    // subtitle: Text('${post.body}'),
                     title: Text(_postList[index]['title']),
                     subtitle: Text(_postList[index]['body']),
                     leading: const Icon(
