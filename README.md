@@ -1,6 +1,6 @@
 # training_flutter
 
-A new Flutter project.
+Basic Flutter for Training 
 
 ## Getting Started
 
