@@ -6,8 +6,10 @@ import 'package:http/http.dart' as http;
 import 'package:training_flutter/helpers/constant.dart';
 import 'package:training_flutter/models/album_model.dart';
 import 'package:training_flutter/models/api_response.dart';
+import 'package:training_flutter/models/reqresin.dart';
 import 'package:training_flutter/services/post_service.dart';
 import 'package:training_flutter/services/reqresin_service.dart';
+import 'package:training_flutter/slicing/theme.dart';
 
 class SliderPage extends StatefulWidget {
   const SliderPage({Key? key}) : super(key: key);
@@ -96,9 +98,17 @@ class _SliderPageState extends State<SliderPage> {
                 });
               }),
         ),
+        // Text(
+        //   '${_reqresin[_current].firstName}'
+        //   '${_reqresin[_current].lastName}',
+        //   style: TextStyle(
+        //     fontSize: 20.0,
+        //     color: Colors.blue,
+        //   ),
+        // ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: imgList.asMap().entries.map((entry) {
+          children: _reqresin.asMap().entries.map((entry) {
             return GestureDetector(
               onTap: () => _controller.animateToPage(entry.key),
               child: Container(
@@ -112,7 +122,7 @@ class _SliderPageState extends State<SliderPage> {
                     shape: BoxShape.circle,
                     color: (Theme.of(context).brightness == Brightness.dark
                             ? Colors.white
-                            : Colors.black)
+                            : Colors.blueAccent)
                         .withOpacity(
                       _current == entry.key ? 0.9 : 0.4,
                     )),
