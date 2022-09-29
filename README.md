@@ -1,4 +1,4 @@
-# Training Flutter BPD Jambi
+# Training Flutter BPD Jambi, 15 Juli 2022
 
 Basic Flutter Slider, HTTP, shared Preferences, dan route dan slicing chatty page
 
