@@ -1,4 +1,4 @@
-# training_flutter
+# Training Flutter BPD Jambi
 
 Basic Flutter Slider, HTTP, shared Preferences, dan route dan slicing chatty page
 
